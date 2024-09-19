@@ -7,20 +7,21 @@ class ItemBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
+      height: 70,
+      padding: EdgeInsets.zero,
       child: Container(
-        height: 70,
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 24),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.5),
-              blurRadius: 10,
               spreadRadius: 3,
+              blurRadius: 10,
               offset: Offset(0, 3),
             ),
-          ],),
+          ]),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -38,6 +39,11 @@ class ItemBottomNavBar extends StatelessWidget {
                 backgroundColor: WidgetStatePropertyAll(Color(0xFF4C53A5)),
                 padding: WidgetStatePropertyAll(
                   EdgeInsets.symmetric(vertical: 13, horizontal: 15),
+                ),
+                shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)
+                  )
                 )
               ),
               child: Row(

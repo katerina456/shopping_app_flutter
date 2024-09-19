@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/Models/Product.dart';
 
 class ItemsWidget extends StatelessWidget {
   const ItemsWidget({super.key});
@@ -6,15 +7,18 @@ class ItemsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      childAspectRatio: 0.62,
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      childAspectRatio: 0.58,
       physics: NeverScrollableScrollPhysics(),
       crossAxisCount: 2,
       shrinkWrap: true,
+      mainAxisSpacing: 16,
+      crossAxisSpacing: 16,
       children: [
-        for(int i=1; i<7; i++)
+        for(int i=0; i<products.length; i++)
         Container(
           padding: EdgeInsets.only(left: 15, right: 15, top: 10),
-          margin: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+         // margin: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),
@@ -50,14 +54,14 @@ class ItemsWidget extends StatelessWidget {
               },
               child: Container(
                 margin: EdgeInsets.all(10),
-                child: Image.asset('images/$i.jpg', height: 120, width: 120,),
+                child: Image.asset(products[i].image, height: 120, width: 120,),
               ),
             ),
             Container(
               padding: EdgeInsets.only(bottom: 8,),
               alignment: Alignment.centerLeft,
               child: Text(
-                'Product Title',
+                products[i].title,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -69,7 +73,7 @@ class ItemsWidget extends StatelessWidget {
               alignment: Alignment.centerLeft,
               padding: EdgeInsets.zero,
               child: Text(
-                'Write description of product',
+                products[i].description,
                 style: TextStyle(
                   fontSize: 15,
                   color: Color(0xFF4C53A5),
@@ -82,7 +86,7 @@ class ItemsWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    '\$55',
+                    '\$${products[i].price}',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,

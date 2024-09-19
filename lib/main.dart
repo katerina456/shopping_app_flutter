@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/pages/homePage.dart';
-import 'pages/CartPage.dart';
+import 'pages/cartPage.dart';
 import 'pages/ItemPage.dart';
 
 void main() {

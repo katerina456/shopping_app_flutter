@@ -73,6 +73,17 @@ class ItemPage extends StatelessWidget {
                           ),
                           Row(
                             children: [
+                              OutlinedButton(
+                                onPressed: () {},
+                                style: ButtonStyle(
+
+                                ),
+                                child: Icon(
+                                  CupertinoIcons.minus,
+                                  size: 18,
+                                  color: Color(0xFF4C53A5),
+                                ),
+                              ),
                               Container(
                                 padding: EdgeInsets.all(5),
                                 decoration: BoxDecoration(
