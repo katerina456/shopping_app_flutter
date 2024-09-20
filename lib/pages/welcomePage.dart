@@ -9,6 +9,7 @@ class WelcomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFFEDECF2),
       body: Container(
+        padding: EdgeInsets.only(top: 190, bottom: 170),
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("images/fon.jpg"),
@@ -19,7 +20,7 @@ class WelcomePage extends StatelessWidget {
         ),
         width: double.infinity,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
@@ -29,27 +30,40 @@ class WelcomePage extends StatelessWidget {
                 fontSize: 50,
               ),
             ),
-            ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: WidgetStatePropertyAll(Color(0xFF4C5391),),
-                padding: WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 20, vertical: 10)),
-                minimumSize: WidgetStatePropertyAll(Size(180,60)),
-                elevation: WidgetStatePropertyAll(20),
-                shadowColor: WidgetStatePropertyAll(Colors.redAccent)
-              ),
-              onPressed: (){
-                //Navigator.pushNamed(context, '/home');
-              },
-              child: Text(
-                'Start',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 2,
-                  fontStyle: FontStyle.italic,
+            Column(
+              children: [
+                Text(
+                  'Do you want something tasty and healthy?\n Then come to us',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-              ),
+                SizedBox(height: 36,),
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(Color(0xFF4C5391),),
+                    padding: WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 30, vertical: 10)),
+                    minimumSize: WidgetStatePropertyAll(Size(180,60)),
+                    elevation: WidgetStatePropertyAll(20),
+                    shadowColor: WidgetStatePropertyAll(Colors.redAccent)
+                  ),
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/home');
+                  },
+                  child: Text(
+                    'Get Start',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2,
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
