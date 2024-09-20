@@ -47,7 +47,7 @@ class Homepage extends StatelessWidget {
                   ),
                   Spacer(),
                   Icon(
-                    Icons.camera_alt,
+                    Icons.search,
                     size: 27,
                     color: Color(0xFF4C53A5),
                   ),
