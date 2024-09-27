@@ -46,11 +46,12 @@ class WelcomePage extends StatelessWidget {
                     backgroundColor: WidgetStatePropertyAll(Color(0xFF4C5391),),
                     padding: WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 30, vertical: 10)),
                     minimumSize: WidgetStatePropertyAll(Size(180,60)),
-                    elevation: WidgetStatePropertyAll(20),
-                    shadowColor: WidgetStatePropertyAll(Colors.redAccent)
+                    elevation: WidgetStatePropertyAll(16),
+                    shadowColor: WidgetStatePropertyAll(Colors.redAccent),
+                    overlayColor: WidgetStatePropertyAll(Color(0xFF4C5361),)
                   ),
                   onPressed: (){
-                    Navigator.pushNamed(context, '/home');
+                    Navigator.pushReplacementNamed(context, '/home');
                   },
                   child: Text(
                     'Get Start',
